@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
+
 from dictionaries import Dictionaries
 from documents_page import DocumentsPage
 from pages.FAQ_page import FAQPage
 from pages.abstract_page import AbstractPage
 from pages.contact_page import ContactPage
 from pages.eArchives_page import eArchivesPage
+from pages.page_with_multiple_images import PageWithMultipleImages
 from pages.recruitment_page import RecruitmentPage
 from pages.science_page import SciencePage
 from pages.students_page import StudentsPage
@@ -47,3 +49,9 @@ class OpenPage(AbstractPage):
     def open_page_science(self):
         self.find_element(*Dictionaries.locator_dictionary['science_page_button']).click()
         return SciencePage(self.driver)
+
+    def open_page_with_multiple_images(self):
+        self.driver.get(Dictionaries.main_pages_list['main_page'] + Dictionaries.main_pages_list['about_university']
+                        + Dictionaries.main_pages_list['university'] + Dictionaries.main_pages_list['authorities']
+                        + Dictionaries.main_pages_list['rectors_photo'])
+        return PageWithMultipleImages(self.driver)
