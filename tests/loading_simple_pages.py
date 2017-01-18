@@ -3,6 +3,7 @@
 import unittest
 
 from browser import Browser
+from dictionaries import Dictionaries
 from pages.open_page import OpenPage
 
 
@@ -13,7 +14,7 @@ class LoadingSimplePagesTest(unittest.TestCase):
         self.open_main_page = OpenPage(self.driver).open_simple_pages()
 
     def test_open_page_FAQ(self):
-        name_of_page = 'FAQ'
+        name_of_page = Dictionaries.name_of_page['faq']
 
         open_page_FAQ = OpenPage(self.driver).open_page_FAQ()
         get_page_name = open_page_FAQ.take_name_of_page(name_of_page).text
@@ -21,7 +22,7 @@ class LoadingSimplePagesTest(unittest.TestCase):
         self.assertEqual(get_page_name, name_of_page)
 
     def test_open_page_eArchiwum(self):
-        name_of_page = 'eArchiwum'
+        name_of_page = Dictionaries.name_of_page['earchiwum']
 
         open_page_eArchives = OpenPage(self.driver).open_page_eArchives()
         get_page_name = open_page_eArchives.take_name_of_page(name_of_page).text
@@ -29,7 +30,7 @@ class LoadingSimplePagesTest(unittest.TestCase):
         self.assertEqual(get_page_name, name_of_page)
 
     def test_open_page_Dokumenty(self):
-        name_of_page = 'Dokumenty'
+        name_of_page = Dictionaries.name_of_page['documents']
 
         open_page_documents = OpenPage(self.driver).open_page_documents()
         get_page_name = open_page_documents.take_name_of_page(name_of_page).text
@@ -37,9 +38,12 @@ class LoadingSimplePagesTest(unittest.TestCase):
         self.assertEqual(get_page_name, name_of_page)
 
     def test_open_page_Kontakt(self):
-        name_of_page = 'Kontakt'
+        name_of_page = Dictionaries.name_of_page['contact']
 
         open_page_contact = OpenPage(self.driver).open_page_contact()
         get_page_name = open_page_contact.take_name_of_page(name_of_page).text
 
         self.assertEqual(get_page_name, name_of_page)
+
+    # def tearDown(self):
+    #     self.browser.stop()
