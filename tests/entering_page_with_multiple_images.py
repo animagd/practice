@@ -4,7 +4,6 @@ import unittest
 
 from browser import Browser
 from dictionaries import Dictionaries
-from pages.abstract_page import AbstractPage
 from pages.open_page import OpenPage
 from pages.page_with_multiple_images import PageWithMultipleImages
 

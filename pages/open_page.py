@@ -6,6 +6,7 @@ from pages.FAQ_page import FAQPage
 from pages.abstract_page import AbstractPage
 from pages.contact_page import ContactPage
 from pages.eArchives_page import eArchivesPage
+from pages.employees_page import EmployeesPage
 from pages.page_with_multiple_images import PageWithMultipleImages
 from pages.recruitment_page import RecruitmentPage
 from pages.science_page import SciencePage
@@ -55,3 +56,7 @@ class OpenPage(AbstractPage):
                         + Dictionaries.main_pages_list['university'] + Dictionaries.main_pages_list['authorities']
                         + Dictionaries.main_pages_list['rectors_photo'])
         return PageWithMultipleImages(self.driver)
+
+    def open_page_employees(self):
+        self.find_element(*Dictionaries.locator_dictionary['employees_page_button']).click()
+        return EmployeesPage(self.driver)
