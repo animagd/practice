@@ -4,6 +4,7 @@ from dictionaries import Dictionaries
 from documents_page import DocumentsPage
 from pages.FAQ_page import FAQPage
 from pages.abstract_page import AbstractPage
+from pages.business_card_page import BusinessCardPage
 from pages.contact_page import ContactPage
 from pages.eArchives_page import eArchivesPage
 from pages.employees_page import EmployeesPage
@@ -60,3 +61,7 @@ class OpenPage(AbstractPage):
     def open_page_employees(self):
         self.find_element(*Dictionaries.locator_dictionary['employees_page_button']).click()
         return EmployeesPage(self.driver)
+
+    def open_page_with_card(self, name):
+        self.take_name_of_page(name).click()
+        return BusinessCardPage(self.driver)

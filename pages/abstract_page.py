@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from selenium.webdriver.support.wait import WebDriverWait
 
 
 class AbstractPage(object):
@@ -13,3 +14,6 @@ class AbstractPage(object):
 
     def take_name_of_page(self, text_in_page):
         return self.driver.find_element_by_link_text(text_in_page)
+
+    def wait_for_element(self, *locator):
+        return WebDriverWait(self.driver, 30).until(lambda self: self.find_element(*locator))
