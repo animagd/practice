@@ -26,5 +26,7 @@ class EnteringPageWithMultipleImages(unittest.TestCase):
                   'fourth_vice-rector_photo']
 
         for i in range(len(photos)):
-            rector_photo_visible = PageWithMultipleImages(self.driver).check_if_photos_is_visible(photos[i])
+            rector_photo_visible = PageWithMultipleImages(self.driver).checking_if_photos_is_visible(photos[i])
             self.assertEqual(rector_photo_visible, True)
+
+        PageWithMultipleImages(self.driver).checking_response_code()
