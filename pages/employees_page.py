@@ -8,7 +8,8 @@ from pages.abstract_page import AbstractPage
 
 class EmployeesPage(AbstractPage):
     name_of_page = 'Pracownicy'
-    locators = {'employee_name': (By.CSS_SELECTOR, '.name > a')}
+    locators = {'employee_name': (By.CSS_SELECTOR, '.name > a'),
+                'employees_page_button': (By.CSS_SELECTOR, '[href = "http://pg.edu.pl/dzial-obiegu-i-archiwizacji-dokumentow/pracownicy"]')}
 
     def __init__(self, driver):
         super(EmployeesPage, self).__init__(driver)
