@@ -5,6 +5,8 @@ from pages.abstract_page import AbstractPage
 import requests
 
 class PageWithMultipleImages(AbstractPage):
+    name_of_page = {'rectors_photo': 'Rektor i prorektorzy'}
+
     photos = ['rector', 'first_vice-rector', 'second_vice-rector', 'third_vice-rector', 'fourth_vice-rector']
 
     urls = ['http://pg.edu.pl/documents/10607/26bde40e-4706-449a-b00b-84ee2dd22351',

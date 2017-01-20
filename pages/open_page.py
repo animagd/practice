@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from dictionaries import Dictionaries
 from pages.FAQ_page import FAQPage
 from pages.abstract_page import AbstractPage
 from pages.business_card_page import BusinessCardPage
@@ -41,15 +40,15 @@ class OpenPage(AbstractPage):
         self.driver.get(self.main_pages_list['main_page'])
 
     def open_page_students(self):
-        self.find_element(*Dictionaries.locator_dictionary['students_page_button']).click()
+        self.find_element(*StudentsPage.locators['students_page_button']).click()
         return StudentsPage(self.driver)
 
     def open_page_recruitment(self):
-        self.find_element(*Dictionaries.locator_dictionary['recruitment_page_button']).click()
+        self.find_element(*RecruitmentPage.locators['recruitment_page_button']).click()
         return RecruitmentPage(self.driver)
 
     def open_page_science(self):
-        self.find_element(*Dictionaries.locator_dictionary['science_page_button']).click()
+        self.find_element(*SciencePage.locators['science_page_button']).click()
         return SciencePage(self.driver)
 
     def open_page_with_multiple_images(self):
