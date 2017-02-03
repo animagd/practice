@@ -5,7 +5,7 @@ from pages.abstract_page import AbstractPage
 import requests
 
 class PageWithMultipleImages(AbstractPage):
-    name_of_page = {'rectors_photo': 'Rektor i prorektorzy'}
+    name_of_page = 'Rektor i prorektorzy'
 
     photos = ['rector', 'first_vice-rector', 'second_vice-rector', 'third_vice-rector', 'fourth_vice-rector']
 

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from selenium.webdriver.common.by import By
+
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
@@ -30,3 +30,9 @@ class AbstractPage(object):
             WebDriverWait(self.driver, 10).until(EC.text_to_be_present_in_element(locator, ' '))
         except TimeoutException:
             raise Exception('Unable to find text in this element after waiting 10 seconds')
+
+    def get_page_source(self):
+        return self.driver.page_source
+
+    def get_current_url(self):
+        return self.driver.current_url

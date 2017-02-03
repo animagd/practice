@@ -5,7 +5,7 @@ from pages.abstract_page import AbstractPage
 
 
 class StudentsPage(AbstractPage):
-    name_of_page = {'students': 'Studenci'}
+    name_of_page = 'Studenci'
     locators = {'students_page_button': (By.CSS_SELECTOR, '[href = "http://pg.edu.pl/studenci"]'),
                 'text': (By.XPATH, '//*[@class="asset-content read-me ekontaktNews-desc news-theme-block"]//span')}
 
