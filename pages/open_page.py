@@ -10,6 +10,7 @@ from pages.employees_page import EmployeesPage
 from pages.page_with_multiple_images import PageWithMultipleImages
 from pages.recruitment_page import RecruitmentPage
 from pages.science_page import SciencePage
+from pages.searching_page import SearchingPage
 from pages.students_page import StudentsPage
 
 
@@ -21,7 +22,8 @@ class OpenPage(AbstractPage):
         self.driver.get(self.main_pages_list['main_page'] + self.main_pages_list['dzial_archiwum'])
 
     def open_page_FAQ(self):
-        self.find_element(*FAQPage.locators['faq_page_button']).click()
+        self.driver.find_element_by_id('n1').click()
+        # self.find_element(*FAQPage.locators['faq_page_button']).click()
         return FAQPage(self.driver)
 
     def open_page_eArchives(self):
@@ -64,3 +66,8 @@ class OpenPage(AbstractPage):
     def open_page_with_card(self, name):
         self.take_name_of_page(name).click()
         return BusinessCardPage(self.driver)
+
+    def open_page_with_searching_results(self, name):
+        self.find_element(*EmployeesPage.locators['search_textbox']).send_keys(name)
+        self.find_element(*EmployeesPage.locators['search-button']).click()
+        return SearchingPage(self.driver)
